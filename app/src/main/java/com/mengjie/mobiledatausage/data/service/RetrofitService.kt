@@ -1,4 +1,4 @@
-package com.mengjie.mobiledatausage.service
+package com.mengjie.mobiledatausage.data.service
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

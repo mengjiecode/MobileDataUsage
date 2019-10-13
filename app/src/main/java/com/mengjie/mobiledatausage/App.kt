@@ -1,7 +1,7 @@
 package com.mengjie.mobiledatausage
 
 import androidx.multidex.MultiDexApplication
-import com.mengjie.mobiledatausage.ui.MainViewModel
+import com.mengjie.mobiledatausage.viewmodel.MainViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.GlobalContext

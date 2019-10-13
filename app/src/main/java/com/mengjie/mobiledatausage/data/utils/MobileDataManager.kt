@@ -1,4 +1,4 @@
-package com.mengjie.mobiledatausage.domain
+package com.mengjie.mobiledatausage.data.utils
 
 import com.mengjie.mobiledatausage.data.MobileData
 import com.mengjie.mobiledatausage.data.Record

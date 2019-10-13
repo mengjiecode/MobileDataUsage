@@ -1,4 +1,4 @@
-package com.mengjie.mobiledatausage.domain
+package com.mengjie.mobiledatausage.data.utils
 
 import com.mengjie.mobiledatausage.data.Record
 import junit.framework.Assert.assertEquals
