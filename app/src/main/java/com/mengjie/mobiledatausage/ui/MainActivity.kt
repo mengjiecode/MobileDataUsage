@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mengjie.mobiledatausage.R
-import com.mengjie.mobiledatausage.data.MobileDataItem
+import com.mengjie.mobiledatausage.data.model.MobileDataItem
 import com.mengjie.mobiledatausage.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.ext.android.inject

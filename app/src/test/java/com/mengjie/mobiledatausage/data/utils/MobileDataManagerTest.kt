@@ -1,6 +1,6 @@
 package com.mengjie.mobiledatausage.data.utils
 
-import com.mengjie.mobiledatausage.data.Record
+import com.mengjie.mobiledatausage.data.model.Record
 import junit.framework.Assert.assertEquals
 import org.junit.Test
 import org.koin.test.KoinTest

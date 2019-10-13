@@ -9,7 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.mengjie.mobiledatausage.R
-import com.mengjie.mobiledatausage.data.MobileDataItem
+import com.mengjie.mobiledatausage.data.model.MobileDataItem
 import kotlinx.android.synthetic.main.list_item_view.view.*
 
 class RecyclerAdapter(

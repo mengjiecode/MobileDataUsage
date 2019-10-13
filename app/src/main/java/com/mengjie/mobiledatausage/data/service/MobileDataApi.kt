@@ -1,6 +1,6 @@
 package com.mengjie.mobiledatausage.data.service
 
-import com.mengjie.mobiledatausage.data.MobileData
+import com.mengjie.mobiledatausage.data.model.MobileData
 import retrofit2.http.GET
 
 interface MobileDataApi {

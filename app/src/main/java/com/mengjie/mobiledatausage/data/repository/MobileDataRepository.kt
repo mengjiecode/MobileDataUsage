@@ -1,7 +1,7 @@
 package com.mengjie.mobiledatausage.data.repository
 
-import com.mengjie.mobiledatausage.data.MobileDataItem
-import com.mengjie.mobiledatausage.data.Record
+import com.mengjie.mobiledatausage.data.model.MobileDataItem
+import com.mengjie.mobiledatausage.data.model.Record
 import com.mengjie.mobiledatausage.data.utils.MobileDataManager
 import com.mengjie.mobiledatausage.data.service.MobileDataApi
 

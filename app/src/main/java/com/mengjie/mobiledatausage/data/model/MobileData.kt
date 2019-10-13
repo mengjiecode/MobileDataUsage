@@ -1,4 +1,4 @@
-package com.mengjie.mobiledatausage.data
+package com.mengjie.mobiledatausage.data.model
 
 import com.google.gson.annotations.SerializedName
 

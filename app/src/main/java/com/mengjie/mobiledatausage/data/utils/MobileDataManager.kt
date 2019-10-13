@@ -1,7 +1,7 @@
 package com.mengjie.mobiledatausage.data.utils
 
-import com.mengjie.mobiledatausage.data.MobileData
-import com.mengjie.mobiledatausage.data.Record
+import com.mengjie.mobiledatausage.data.model.MobileData
+import com.mengjie.mobiledatausage.data.model.Record
 
 object MobileDataManager {
 
