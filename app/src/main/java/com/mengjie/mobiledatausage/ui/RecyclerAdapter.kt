@@ -16,10 +16,11 @@ class RecyclerAdapter(
     private val context: Context,
     private val item: List<MobileDataItem>
 ) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.quarter.text = item[position].year
         holder.amount.text = item[position].totalUsage
-        holder.image.setImageDrawable(context.getDrawable(R.mipmap.ic_launcher))
+        holder.image.setImageDrawable(context.getDrawable(R.drawable.ic_trending_down_black_24dp))
         holder.image.setOnClickListener {
             Toast.makeText(context, "Image is clicked", Toast.LENGTH_LONG).show()
         }
