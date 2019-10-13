@@ -14,24 +14,24 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/quarter_view"
+            android:id="@+id/textViewYear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_toStartOf="@+id/image_view"
+            android:layout_toStartOf="@+id/imageView"
             android:text="quarter" />
 
         <TextView
-            android:id="@+id/amount_view"
+            android:id="@+id/textViewAmount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/quarter_view"
+            android:layout_below="@id/textViewYear"
             android:layout_marginTop="8dp"
-            android:layout_toStartOf="@+id/image_view"
+            android:layout_toStartOf="@+id/imageView"
             android:text="amount" />
 
         <ImageView
-            android:id="@+id/image_view"
+            android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"

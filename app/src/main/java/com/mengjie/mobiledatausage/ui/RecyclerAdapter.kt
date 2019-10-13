@@ -18,9 +18,14 @@ class RecyclerAdapter(
 ) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.quarter.text = item[position].year
+        holder.year.text = item[position].year
         holder.amount.text = item[position].totalUsage
         holder.image.setImageDrawable(context.getDrawable(R.drawable.ic_trending_down_black_24dp))
+        if (item[position].isDecrease) {
+            holder.image.visibility = View.VISIBLE
+        } else {
+            holder.image.visibility = View.GONE
+        }
         holder.image.setOnClickListener {
             Toast.makeText(context, "Image is clicked", Toast.LENGTH_LONG).show()
         }
@@ -41,8 +46,8 @@ class RecyclerAdapter(
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val quarter: TextView = view.quarter_view
-        val amount: TextView = view.amount_view
-        val image: ImageView = view.image_view
+        val year: TextView = view.textViewYear
+        val amount: TextView = view.textViewAmount
+        val image: ImageView = view.imageView
     }
 }

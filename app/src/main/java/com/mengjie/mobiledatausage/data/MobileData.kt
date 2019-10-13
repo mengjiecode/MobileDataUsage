@@ -40,5 +40,6 @@ data class Link(
 data class MobileDataItem(
     val year: String,
     val totalUsage: String,
+    val isDecrease: Boolean,
     val quarter: List<Record>
 )

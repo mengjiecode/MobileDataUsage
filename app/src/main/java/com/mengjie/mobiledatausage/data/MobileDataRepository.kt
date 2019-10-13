@@ -32,11 +32,16 @@ class MobileDataRepository(private val api: MobileDataApi) {
         // Convert to display item
         hashMap.forEach {
             var total = 0.0
-
+            var maxVolumeOfMobileData = 0.0
+            var isDecrease = false
             it.value.forEach { recordItem ->
                 total += recordItem.volumeOfMobileData.toDouble()
+                if (recordItem.volumeOfMobileData.toDouble() < maxVolumeOfMobileData) {
+                    isDecrease = true
+                }
+                maxVolumeOfMobileData = recordItem.volumeOfMobileData.toDouble()
             }
-            mobileDataList.add(MobileDataItem(it.key, total.toString(), it.value))
+            mobileDataList.add(MobileDataItem(it.key, total.toString(), isDecrease, it.value))
         }
 
         // Sort the year accordingly
