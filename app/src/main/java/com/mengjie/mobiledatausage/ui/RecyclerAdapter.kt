@@ -27,7 +27,7 @@ class RecyclerAdapter(
             holder.image.visibility = View.GONE
         }
         holder.image.setOnClickListener {
-            Toast.makeText(context, "Image is clicked", Toast.LENGTH_LONG).show()
+            Toast.makeText(context, "One quarter in ${item[position].year} demonstrates a decrease in mobile data usage.", Toast.LENGTH_LONG).show()
         }
     }
 

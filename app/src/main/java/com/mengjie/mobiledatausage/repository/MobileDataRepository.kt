@@ -2,21 +2,18 @@ package com.mengjie.mobiledatausage.repository
 
 import com.mengjie.mobiledatausage.data.MobileDataItem
 import com.mengjie.mobiledatausage.data.Record
+import com.mengjie.mobiledatausage.domain.MobileDataManager
 import com.mengjie.mobiledatausage.service.MobileDataApi
 
 class MobileDataRepository(private val api: MobileDataApi) {
 
     suspend fun getData(): MutableList<MobileDataItem>? {
         val response = api.getMobileData()
-
+        val mobileDataList = mutableListOf<MobileDataItem>()
         val hashMap: HashMap<String, MutableList<Record>> = hashMapOf()
 
         // Filter out the correct years
-        val filteredRecords = response.result.records.filter {
-            it.quarter.substring(0, 4).toInt() >= 2008
-        }.filter {
-            it.quarter.substring(0, 4).toInt() <= 2018
-        }
+         val filteredRecords = MobileDataManager.filterRecords(response)
 
         // A hash map of year with their quarters
         filteredRecords.forEach {
@@ -30,25 +27,13 @@ class MobileDataRepository(private val api: MobileDataApi) {
             }
         }
 
-        val mobileDataList = mutableListOf<MobileDataItem>()
-
         // Convert to display item
         hashMap.forEach {
-            var total = 0.0
-            var maxVolumeOfMobileData = 0.0
-            var isDecrease = false
-            it.value.forEach { recordItem ->
-                total += recordItem.volumeOfMobileData.toDouble()
-                if (recordItem.volumeOfMobileData.toDouble() < maxVolumeOfMobileData) {
-                    isDecrease = true
-                }
-                maxVolumeOfMobileData = recordItem.volumeOfMobileData.toDouble()
-            }
             mobileDataList.add(
                 MobileDataItem(
                     it.key,
-                    total.toString(),
-                    isDecrease,
+                    MobileDataManager.getTotalData(it.value).toString(),
+                    MobileDataManager.isDecrease(it.value),
                     it.value
                 )
             )
