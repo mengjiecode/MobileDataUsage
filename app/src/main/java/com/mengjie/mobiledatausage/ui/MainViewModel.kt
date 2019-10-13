@@ -3,7 +3,7 @@ package com.mengjie.mobiledatausage.ui
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.liveData
-import com.mengjie.mobiledatausage.data.MobileDataRepository
+import com.mengjie.mobiledatausage.repository.MobileDataRepository
 import com.mengjie.mobiledatausage.service.RetrofitService
 import kotlinx.coroutines.Dispatchers
 

@@ -1,15 +1,18 @@
-package com.mengjie.mobiledatausage.data
+package com.mengjie.mobiledatausage.repository
 
+import com.mengjie.mobiledatausage.data.MobileDataItem
+import com.mengjie.mobiledatausage.data.Record
 import com.mengjie.mobiledatausage.service.MobileDataApi
 
 class MobileDataRepository(private val api: MobileDataApi) {
+
     suspend fun getData(): MutableList<MobileDataItem>? {
-        val movieResponse = api.getMobileData()
+        val response = api.getMobileData()
 
         val hashMap: HashMap<String, MutableList<Record>> = hashMapOf()
 
         // Filter out the correct years
-        val filteredRecords = movieResponse.result.records.filter {
+        val filteredRecords = response.result.records.filter {
             it.quarter.substring(0, 4).toInt() >= 2008
         }.filter {
             it.quarter.substring(0, 4).toInt() <= 2018
@@ -41,7 +44,14 @@ class MobileDataRepository(private val api: MobileDataApi) {
                 }
                 maxVolumeOfMobileData = recordItem.volumeOfMobileData.toDouble()
             }
-            mobileDataList.add(MobileDataItem(it.key, total.toString(), isDecrease, it.value))
+            mobileDataList.add(
+                MobileDataItem(
+                    it.key,
+                    total.toString(),
+                    isDecrease,
+                    it.value
+                )
+            )
         }
 
         // Sort the year accordingly
