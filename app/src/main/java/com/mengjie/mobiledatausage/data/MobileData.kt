@@ -37,7 +37,7 @@ data class Link(
     val next: String
 )
 
-data class UsageDisplayItem(
+data class MobileDataItem(
     val year: String,
     val totalUsage: String,
     val quarter: List<Record>
